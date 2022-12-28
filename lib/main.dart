@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-     
         primarySwatch: Colors.red,
       ),
       home: const login(),
@@ -38,8 +37,8 @@ class _loginState extends State<login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //welcome text
 
+              //welcome text
               Icon(
                 Icons.adobe_sharp,
                 size: 100,
@@ -83,8 +82,8 @@ class _loginState extends State<login> {
                 height: 20,
               ),
 
-              //password
 
+              //password
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
@@ -108,9 +107,9 @@ class _loginState extends State<login> {
               SizedBox(
                 height: 20,
               ),
+              
 
               //button
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
