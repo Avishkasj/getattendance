@@ -40,7 +40,7 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[300],
+      backgroundColor: Colors.yellow[400],
       body: SafeArea(
         child: Center(
           child: Column(
@@ -48,8 +48,10 @@ class _loginState extends State<login> {
             children: [
               //welcome text
 
-              Icon(Icons.adobe_sharp,
-              size: 100,),
+              Icon(
+                Icons.adobe_sharp,
+                size: 100,
+              ),
               SizedBox(
                 height: 30,
               ),
@@ -135,7 +137,9 @@ class _loginState extends State<login> {
                 ),
               ),
 
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
 
               //become a member
 
@@ -143,12 +147,14 @@ class _loginState extends State<login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Not a member'),
-                  Text('Register now',style:TextStyle(color: Colors.blue,),)
+                  Text(
+                    'Register now',
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
+                  )
                 ],
               ),
-
-
-
             ],
           ),
         ),
