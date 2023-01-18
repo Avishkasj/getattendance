@@ -1,3 +1,4 @@
+import 'package:attendance/QrScanner.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -117,21 +118,24 @@ class _loginState extends State<login> {
                   decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(12)),
-                  child: Center(
-                    child: Text(
-                      'Sing in',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18),
+                  child: TextButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                     ),
-                  ),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder:(context)=>QrScanner()));
+                    },
+                    child: Text('LOG IN'),
+                  )
                 ),
               ),
 
               SizedBox(
                 height: 20,
               ),
+
+
+
 
               //become a member
 
