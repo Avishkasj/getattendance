@@ -8,8 +8,9 @@ class QrScanner extends StatelessWidget{
     return MaterialApp(
       title: "screen 2",
       home: Scaffold(
+        backgroundColor: Colors.yellow[400],
         appBar: AppBar(
-          title: Text("this is second screen"),
+          title: Text("QR scanner"),
 
         ),
         body: Center(
