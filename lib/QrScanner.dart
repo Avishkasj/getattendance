@@ -1,3 +1,4 @@
+import 'package:attendance/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +17,10 @@ class QrScanner extends StatelessWidget{
             style: ButtonStyle(
               foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
             ),
-            onPressed: () { },
-            child: Text('Ho To Home'),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp()));
+            },
+            child: Text('Go Back'),
           ),
         ),
       ),
