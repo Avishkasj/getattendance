@@ -6,11 +6,16 @@ import 'package:flutter/foundation.dart';
 
 
 class QrScanner extends StatelessWidget {
+
+
   const QrScanner({Key? key}) : super(key: key);
+
+
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -44,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -58,16 +64,26 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void reassemble() {
     super.reassemble();
-    if (Platform.isAndroid) {
-      controller!.pauseCamera();
-    } else if (Platform.isIOS) {
-      controller!.resumeCamera();
-    }
+    // if (Platform.isAndroid) {
+    //   controller!.pauseCamera();
+    // } else if (Platform.isIOS) {
+    //   controller!.resumeCamera();
+    // }
   }
 
   @override
   Widget build(BuildContext context) {
+    Color getColor(){
+      bool status = true;
+        if(status==true){
+          return Colors.green;
+        }else{
+          return Colors.red;
+        };
+
+    }
     return Scaffold(
+      backgroundColor: Colors.yellow[400],
       body: Column(
         children: <Widget>[
           Expanded(
@@ -75,14 +91,39 @@ class _MyHomePageState extends State<MyHomePage> {
             child: QRView(
               key: qrKey,
               onQRViewCreated: _onQRViewCreated,
+              overlay: QrScannerOverlayShape(
+                borderLength: 20,
+                borderWidth: 20,
+                borderRadius: 10,
+                borderColor:getColor(),
+                cutOutSize: MediaQuery.of(context).size.width * 0.8,
+              ),
             ),
           ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child:
+              Text("Student Name"),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child:
+              Text("Student Number"),
+            ),
+          ),
+
+
+
           Expanded(
             flex: 1,
             child: Center(
               child: (result != null)
                   ? Text(
-                  'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
+                      'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
                   : Text('Scan a code'),
             ),
           )
@@ -98,7 +139,11 @@ class _MyHomePageState extends State<MyHomePage> {
         result = scanData;
       });
     });
+    controller.pauseCamera();
+    controller.resumeCamera();
   }
+
+
 
   @override
   void dispose() {
