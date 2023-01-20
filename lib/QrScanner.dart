@@ -117,7 +117,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
 
 
-
           Expanded(
             flex: 1,
             child: Center(
@@ -125,6 +124,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   ? Text(
                       'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
                   : Text('Scan a code'),
+            ),
+          ),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    primary: Colors.purpleAccent,
+                    backgroundColor: Colors.black, // Background Color
+                  ),
+                  child: const Text(
+                    'ADD ',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    primary: Colors.purpleAccent,
+                    backgroundColor: Colors.black, // Background Color
+                  ),
+                  child: const Text(
+                    'CANCLE',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+              ],
             ),
           )
         ],
