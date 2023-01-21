@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
+import  'package:intl/intl.dart';
 
-
+final String date = DateTime.now().toString();
+String cdate = DateFormat("yyyy-MM-dd").format(DateTime.now());
 
 class QrScanner extends StatelessWidget {
 
@@ -107,16 +109,17 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               child:
-              Text("Student Name"),
+              Text('Date: $cdate'),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               child:
-              Text("Student Number"),
+              Text("Student Number: TG514"),
             ),
           ),
+
 
 
           Expanded(

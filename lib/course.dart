@@ -40,6 +40,7 @@ class Course extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder:(context)=>QrScanner()));
                   print("Course 2 clicked");
+
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -56,7 +57,8 @@ class Course extends StatelessWidget {
 
               GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>QrScanner()));
+                  String datetime = DateTime.now().toString();
+                  print(datetime);
                   print("Course 3 clicked");
                 },
                 child: Padding(
