@@ -4,22 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import  'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 final String date = DateTime.now().toString();
 String cdate = DateFormat("yyyy-MM-dd").format(DateTime.now());
 
 class QrScanner extends StatelessWidget {
-
-
   const QrScanner({Key? key}) : super(key: key);
-
-
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -53,7 +48,6 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -77,15 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Color getColor(){
+    Color getColor() {
       bool status = true;
-        if(status==true){
-          return Colors.green;
-        }else{
-          return Colors.red;
-        };
-
+      if (status == true) {
+        return Colors.green;
+      } else {
+        return Colors.red;
+      }
+      ;
     }
+
     return Scaffold(
       backgroundColor: Colors.yellow[400],
       body: Column(
@@ -99,29 +94,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderLength: 20,
                 borderWidth: 20,
                 borderRadius: 10,
-                borderColor:getColor(),
+                borderColor: getColor(),
                 cutOutSize: MediaQuery.of(context).size.width * 0.8,
               ),
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              child:
-              Text('Date: $cdate'),
+              child: Text('Date: $cdate'),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              child:
-              Text("Student Number: TG514"),
+              child: Text("Student Number: TG514"),
             ),
           ),
-
-
-
           Expanded(
             flex: 1,
             child: Center(
@@ -135,22 +124,23 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    primary: Colors.purpleAccent,
-                    backgroundColor: Colors.black, // Background Color
-                  ),
-                  child: const Text(
-                    'ADD ',
-                    style: TextStyle(fontSize: 24),
+                Container(
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      primary: Colors.purpleAccent,
+                      backgroundColor: Colors.black, // Background Color
+                    ),
+                    child: const Text(
+                      'ADD ',
+                      style: TextStyle(fontSize: 24),
+                    ),
                   ),
                 ),
-
                 TextButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:(context)=>MyApp()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyApp()));
                   },
                   style: TextButton.styleFrom(
                     primary: Colors.purpleAccent,
@@ -179,8 +169,6 @@ class _MyHomePageState extends State<MyHomePage> {
     controller.pauseCamera();
     controller.resumeCamera();
   }
-
-
 
   @override
   void dispose() {
