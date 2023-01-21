@@ -1,3 +1,5 @@
+import 'package:attendance/course.dart';
+import 'package:attendance/main.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'dart:io';
@@ -144,7 +146,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>MyApp()));
+                  },
                   style: TextButton.styleFrom(
                     primary: Colors.purpleAccent,
                     backgroundColor: Colors.black, // Background Color

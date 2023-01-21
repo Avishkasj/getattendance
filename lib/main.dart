@@ -1,4 +1,5 @@
 import 'package:attendance/QrScanner.dart';
+import 'package:attendance/course.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -125,7 +126,7 @@ class _loginState extends State<login> {
                       foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder:(context)=>QrScanner()));
+                      Navigator.push(context, MaterialPageRoute(builder:(context)=>Course()));
                     },
                     child: Text('LOG IN'),
                   )
